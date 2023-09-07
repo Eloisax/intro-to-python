@@ -1,5 +1,5 @@
 print(
-  "Hello, welcome to your wellbeing diary. Write how you are feeling, and look back at howyou have felt throughout the past week. You may be able to identify whta makes you feel good and what makes you feel bad. If you want to stop adding entries into your diary please type 'Exit' when asked to enter a date"
+  "Hello, welcome to your wellbeing diary. Write how you are feeling, and look back at howyou have felt throughout the past week. You may be able to identify whta makes you feel good and what makes you feel bad. If you want to stop adding entries into your diary please type 'Exit' when asked to enter a date\n"
 )
 
 feelings = [{
@@ -44,7 +44,7 @@ def diary_date():
   add_date = True
   add_your_mood = True
   while add_date != "":
-    add_date = str(input("What is the date?\n"))
+    add_date = str(input("\nWhat is the date?\n"))
     if add_date:
       f.write("Date: " + add_date + "\n")
     if add_date.lower() == "exit":
@@ -114,13 +114,14 @@ def add_habits():
 
 
 def close_diary():
-  close_diary_now = input("Do you want to close the diary\n")
+  close_diary_now = input("\nDo you want to close the diary\n")
   if close_diary_now == "no":
     diary_add()
   else:
-    print("Have a nice day")
+    print("\nHave a nice day\n")
     diary_results = input("Do you want to read your diary\n")
     if diary_results == "yes":
+      print("\n")
       read_diary()
 
 
@@ -128,6 +129,7 @@ def close_diary():
 
 
 def read_diary():
+  print("\n")
   f2 = open("diary.txt", "r")
   for date_add in f2:
     print(date_add)
@@ -137,7 +139,7 @@ def read_diary():
 
 
 def open_diary():
-  open_the_diary = input("Do you want to open the diary")
+  open_the_diary = input("\nDo you want to open the diary")
   if open_the_diary == "yes":
     diary_date()
   else:
